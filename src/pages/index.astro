@@ -1,50 +1,73 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+// 移除所有导入的组件，保持最小化
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+<!-- 整个页面切换为暗色主题，模仿 Foliograph 的背景 -->
+<html lang="zh" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 幻想世界：终极实验室</title>
+    <!-- 加载 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 确保页面主体背景和文本颜色与 Foliograph 的暗色主题一致 */
+        body {
+            font-family: 'Inter', sans-serif; /* 保持专业字体 */
+        }
+    </style>
+</head>
+<!-- 设定深灰色背景和白色文本 -->
+<body class="bg-gray-900 text-white min-h-screen">
+
+    <!-- 导航栏：模仿 Foliograph 的简单专业导航 -->
+    <header class="p-6 flex justify-between items-center max-w-7xl mx-auto">
+        <!-- 网站 Logo / 名称 -->
+        <div class="text-2xl font-bold text-fuchsia-400 tracking-wider">
+            AI Fantasy Lab
+        </div>
+        <!-- 导航链接 -->
+        <nav class="hidden sm:block">
+            <a href="/blog" class="text-gray-400 hover:text-fuchsia-400 mx-4 transition duration-300">内容列表</a>
+            <a href="#" class="text-gray-400 hover:text-fuchsia-400 mx-4 transition duration-300">关于我们</a>
+            <!-- 登录/入口按钮 -->
+            <a href="#" class="ml-4 px-4 py-2 text-sm font-medium rounded-full text-white bg-fuchsia-600 hover:bg-fuchsia-500">
+                进入
+            </a>
+        </nav>
+    </header>
+
+    <!-- 核心英雄区域：模仿 Foliograph 的居中、大字、强视觉冲击结构 -->
+    <section class="flex flex-col items-center justify-center min-h-[85vh] text-center p-8 max-w-4xl mx-auto">
+        
+        <!-- 顶部提示语 -->
+        <p class="text-lg text-fuchsia-400 mb-2 tracking-widest uppercase">
+            // Welcome to the Forbidden Chamber
+        </p>
+
+        <!-- 主标题：使用超大字体 -->
+        <h1 class="text-7xl font-extrabold tracking-tight mb-4 text-white sm:text-8xl md:text-9xl leading-none">
+            <span class="text-fuchsia-500">AI</span> 幻想世界
+        </h1>
+
+        <!-- 描述性段落：强调专业和深度 -->
+        <p class="text-xl text-gray-400 mb-10 max-w-2xl font-light">
+            探索由人工智能驱动的边界艺术与深层想象。一个关于创新、灵感与禁忌的视觉和思想实验室。
+        </p>
+
+        <!-- Call to action 按钮组 -->
+        <div class="flex flex-col sm:flex-row gap-4">
+            <!-- 主要按钮：鲜亮洋红色，诱惑力强 -->
+            <a href="/blog" class="px-8 py-3 text-lg font-semibold rounded-lg shadow-xl text-white bg-fuchsia-600 hover:bg-fuchsia-500 transition duration-300 ease-in-out transform hover:scale-105">
+                🔥 立即进入独家内容
+            </a>
+            <!-- 次要按钮：透明边框，低调专业 -->
+            <a href="#" class="px-8 py-3 text-lg font-semibold rounded-lg shadow-md text-gray-200 bg-transparent border-2 border-gray-700 hover:border-fuchsia-500 hover:text-fuchsia-400 transition duration-300 ease-in-out">
+                📁 关于实验室 (About)
+            </a>
+        </div>
+        
+    </section>
+
+</body>
 </html>
