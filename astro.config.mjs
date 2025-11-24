@@ -1,19 +1,11 @@
-{
-  "name": "astro-blog-starter-template",
-  "description": "Build a personal website, blog, or portfolio with Astro.",
-  "private": true,
-  "dependencies": {
-    "@astrojs/mdx": "4.3.0",
-    "@astrojs/rss": "4.0.11",
-    "@astrojs/sitemap": "3.4.1",
-    "astro": "5.10.1",
-    "typescript": "5.8.3" 
-  },
-  "devDependencies": {},
-  "scripts": {
-    "astro": "astro",
-    "build": "astro build",
-    "dev": "astro dev"
-  },
-  "type": "module"
-}
+import { defineConfig } from 'astro/config';
+import mdx from '@astrojs/mdx';
+import sitemap from '@astrojs/sitemap';
+
+// https://astro.build/config
+export default defineConfig({
+  // 您的网站域名
+  site: 'https://www.forbidden-chamber.com',
+  // 集成配置
+  integrations: [mdx(), sitemap()],
+});
