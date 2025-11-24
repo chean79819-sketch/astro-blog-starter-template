@@ -1,22 +1,19 @@
-// @ts-check
-// 只需要一次性导入所有需要的模块
-import { defineConfig } from "astro/config";
-import mdx from "@astrojs/mdx";
-import sitemap from "@astrojs/sitemap";
-import cloudflare from "@astrojs/cloudflare";
-
-// https://astro.build/config
-export default defineConfig({
-  // 核心设置：您的实际域名
-  site: "https://www.forbidden-chamber.com", 
-  
-  // 集成设置：包含了 MDX 和 Sitemap
-  integrations: [mdx(), sitemap()],
-  
-  // Cloudflare 适配器设置
-  adapter: cloudflare({
-    platformProxy: {
-      enabled: true,
-    },
-  }),
-});
+{
+  "name": "astro-blog-starter-template",
+  "description": "Build a personal website, blog, or portfolio with Astro.",
+  "private": true,
+  "dependencies": {
+    "@astrojs/mdx": "4.3.0",
+    "@astrojs/rss": "4.0.11",
+    "@astrojs/sitemap": "3.4.1",
+    "astro": "5.10.1",
+    "typescript": "5.8.3" 
+  },
+  "devDependencies": {},
+  "scripts": {
+    "astro": "astro",
+    "build": "astro build",
+    "dev": "astro dev"
+  },
+  "type": "module"
+}
