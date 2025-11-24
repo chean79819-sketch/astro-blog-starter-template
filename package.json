@@ -1,19 +1,20 @@
 {
   "name": "astro-blog-starter-template",
-  "description": "Build a personal website, blog, or portfolio with Astro.",
-  "private": true,
-  "dependencies": {
-    "@astrojs/mdx": "4.3.0",
-    "@astrojs/rss": "4.0.11",
-    "@astrojs/sitemap": "3.4.1",
-    "astro": "5.10.1",
-    "typescript": "5.8.3" 
-  },
-  "devDependencies": {},
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "astro": "astro",
+    "dev": "astro dev",
+    "start": "astro dev",
     "build": "astro build",
-    "dev": "astro dev"
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "type": "module"
+  "dependencies": {
+    "@astrojs/mdx": "^4.0.0",
+    "@astrojs/rss": "^4.0.0",
+    "@astrojs/sitemap": "^3.0.0",
+    "astro": "^5.0.0",
+    "typescript": "^5.0.0"
+  },
+  "devDependencies": {}
 }
