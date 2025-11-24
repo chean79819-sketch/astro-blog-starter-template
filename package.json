@@ -18,7 +18,8 @@
     "@astrojs/rss": "4.0.11",
     "@astrojs/sitemap": "3.4.1",
     "astro": "5.10.1",
-    "typescript": "5.8.3","astro-seo-sitemap": "^版本号"
+    "typescript": "5.8.3" 
+    // <--- 我们删除了您添加的错误项和逗号冲突
   },
   "devDependencies": {
     "wrangler": "4.21.x"
