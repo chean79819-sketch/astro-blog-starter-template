@@ -8,20 +8,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI 幻想世界：终极实验室</title>
-    <!-- 加载 Tailwind CSS -->
+    <!-- 关键修复：强制加载 Tailwind CDN，确保样式生效 -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* 确保页面主体背景和文本颜色与 Foliograph 的暗色主题一致 */
         body {
             font-family: 'Inter', sans-serif; /* 保持专业字体 */
+            /* 模仿 Foliograph 的深色渐变背景 */
+            background: linear-gradient(180deg, #1f2937 0%, #111827 100%);
+        }
+        /* 添加一个微妙的卡片 hover 效果 */
+        .card-hover:hover {
+            box-shadow: 0 10px 15px -3px rgba(168, 85, 247, 0.3), 0 4px 6px -2px rgba(168, 85, 247, 0.05); /* 紫色阴影 */
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <!-- 设定深灰色背景和白色文本 -->
-<body class="bg-gray-900 text-white min-h-screen">
+<body class="text-white min-h-screen">
 
-    <!-- 导航栏：模仿 Foliograph 的简单专业导航 -->
-    <header class="p-6 flex justify-between items-center max-w-7xl mx-auto">
+    <!-- 导航栏：模仿 Foliograph 的简单专业导航，增加了背景模糊效果 -->
+    <header class="sticky top-0 z-50 p-6 flex justify-between items-center max-w-7xl mx-auto backdrop-blur-md bg-gray-900/80 rounded-b-xl shadow-lg">
         <!-- 网站 Logo / 名称 -->
         <div class="text-2xl font-bold text-fuchsia-400 tracking-wider">
             AI Fantasy Lab
@@ -31,43 +38,71 @@
             <a href="/blog" class="text-gray-400 hover:text-fuchsia-400 mx-4 transition duration-300">内容列表</a>
             <a href="#" class="text-gray-400 hover:text-fuchsia-400 mx-4 transition duration-300">关于我们</a>
             <!-- 登录/入口按钮 -->
-            <a href="#" class="ml-4 px-4 py-2 text-sm font-medium rounded-full text-white bg-fuchsia-600 hover:bg-fuchsia-500">
+            <a href="#" class="ml-4 px-4 py-2 text-sm font-medium rounded-full text-white bg-fuchsia-600 hover:bg-fuchsia-500 shadow-md">
                 进入
             </a>
         </nav>
     </header>
 
     <!-- 核心英雄区域：模仿 Foliograph 的居中、大字、强视觉冲击结构 -->
-    <section class="flex flex-col items-center justify-center min-h-[85vh] text-center p-8 max-w-4xl mx-auto">
+    <section class="flex flex-col items-center justify-center min-h-[85vh] text-center p-8 max-w-7xl mx-auto">
         
         <!-- 顶部提示语 -->
-        <p class="text-lg text-fuchsia-400 mb-2 tracking-widest uppercase">
+        <p class="text-xl text-fuchsia-400 mb-4 tracking-widest uppercase font-semibold">
             // Welcome to the Forbidden Chamber
         </p>
 
-        <!-- 主标题：使用超大字体 -->
-        <h1 class="text-7xl font-extrabold tracking-tight mb-4 text-white sm:text-8xl md:text-9xl leading-none">
+        <!-- 主标题：使用超大字体和微妙的阴影 -->
+        <h1 class="text-7xl font-extrabold tracking-tight mb-6 text-white sm:text-8xl md:text-[8rem] lg:text-[10rem] leading-none drop-shadow-lg">
             <span class="text-fuchsia-500">AI</span> 幻想世界
         </h1>
 
         <!-- 描述性段落：强调专业和深度 -->
-        <p class="text-xl text-gray-400 mb-10 max-w-2xl font-light">
-            探索由人工智能驱动的边界艺术与深层想象。一个关于创新、灵感与禁忌的视觉和思想实验室。
+        <p class="text-xl text-gray-400 mb-12 max-w-3xl font-light">
+            探索由人工智能驱动的边界艺术与深层想象。一个关于创新、灵感与禁忌的视觉和思想实验室。我们在这里重塑艺术的定义。
         </p>
 
         <!-- Call to action 按钮组 -->
-        <div class="flex flex-col sm:flex-row gap-4">
+        <div class="flex flex-col sm:flex-row gap-6">
             <!-- 主要按钮：鲜亮洋红色，诱惑力强 -->
-            <a href="/blog" class="px-8 py-3 text-lg font-semibold rounded-lg shadow-xl text-white bg-fuchsia-600 hover:bg-fuchsia-500 transition duration-300 ease-in-out transform hover:scale-105">
+            <a href="/blog" class="px-10 py-4 text-xl font-semibold rounded-lg shadow-2xl text-white bg-fuchsia-600 hover:bg-fuchsia-500 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-fuchsia-500/50">
                 🔥 立即进入独家内容
             </a>
             <!-- 次要按钮：透明边框，低调专业 -->
-            <a href="#" class="px-8 py-3 text-lg font-semibold rounded-lg shadow-md text-gray-200 bg-transparent border-2 border-gray-700 hover:border-fuchsia-500 hover:text-fuchsia-400 transition duration-300 ease-in-out">
+            <a href="#" class="px-10 py-4 text-xl font-semibold rounded-lg shadow-md text-gray-200 bg-transparent border-2 border-fuchsia-500 hover:bg-fuchsia-900 transition duration-300 ease-in-out">
                 📁 关于实验室 (About)
             </a>
         </div>
         
     </section>
+
+    <!-- 分隔线和次要信息区域，模仿 Foliograph 的底部卡片结构 -->
+    <footer class="mt-20 border-t border-gray-800 pt-16 pb-8 max-w-7xl mx-auto w-full">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+            
+            <!-- 信息卡片 1 -->
+            <div class="bg-gray-800 p-6 rounded-xl card-hover transition duration-300">
+                <h3 class="text-2xl font-bold text-fuchsia-400 mb-2">独家画廊</h3>
+                <p class="text-gray-400">仅限会员的 AI 艺术和高清图像。每周更新，不断探索新的视觉领域。</p>
+            </div>
+
+            <!-- 信息卡片 2 -->
+            <div class="bg-gray-800 p-6 rounded-xl card-hover transition duration-300">
+                <h3 class="text-2xl font-bold text-fuchsia-400 mb-2">技术教程</h3>
+                <p class="text-gray-400">分享 Midjourney, Stable Diffusion 等工具的私密提示词和高级技巧。</p>
+            </div>
+
+            <!-- 信息卡片 3 -->
+            <div class="bg-gray-800 p-6 rounded-xl card-hover transition duration-300">
+                <h3 class="text-2xl font-bold text-fuchsia-400 mb-2">社区交流</h3>
+                <p class="text-gray-400">加入我们的私人 Discord 或论坛，与同好者交流创作心得。</p>
+            </div>
+        </div>
+
+        <div class="text-center text-gray-600 mt-16 text-sm">
+            © 2024 AI Fantasy Lab. All rights reserved. | Powered by Astro.
+        </div>
+    </footer>
 
 </body>
 </html>
